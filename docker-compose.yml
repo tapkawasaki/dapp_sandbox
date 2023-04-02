@@ -1,0 +1,16 @@
+version: '3'
+services:
+  truffle:
+    container_name: truffle
+    build: ./truffle
+    ports:
+      - '8888:8888'
+    tty: true
+  ganache:
+    container_name: ganache
+    build: ./ganache
+    platform: linux/amd64
+    ports:
+       - '8545:8545'
+    stdin_open: true
+    tty: true
