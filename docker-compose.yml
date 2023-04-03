@@ -9,8 +9,12 @@ services:
   ganache:
     container_name: ganache
     build: ./ganache
+    volumes:
+      - ./ganache/data:/var/ganache
     platform: linux/amd64
     ports:
-       - '8545:8545'
+      - '8545:8545'
     stdin_open: true
     tty: true
+    env_file:
+      - ./ganache/ganache.env
